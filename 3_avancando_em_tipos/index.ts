@@ -26,3 +26,53 @@ function greeting(name: string): string
 };
 
 console.log(greeting('Otávio'));
+
+// 5 - função anonima:
+
+setTimeout(()=>{
+    const sallary: number = 1200;
+
+}, 2000)
+
+// 6 - tipos de objeto:
+
+function passCordinates(coord: {
+    x: number,
+    y: number,
+}){
+    console.log("X:"+coord.x);
+    console.log("Y:"+coord.y);
+}
+
+const objCoord = {x: 329, y: 23};
+
+passCordinates(objCoord);
+
+// 7 - props opcionais:
+
+function showNumbers(a: number, b: number, c?: number){
+    console.log("A:" + a)
+    console.log("B:" + b)
+    if(c){
+        console.log("C:" + c)
+    }
+    
+}
+
+showNumbers(1,2,3);
+showNumbers(4,5);
+
+// 8 - validando argumento opcional:
+
+function advancedGreeting(firstName: string, lastName?: string){
+
+    if (lastName !== undefined) {
+        return `Olá ${firstName} ${lastName}, tudo bem?`
+    }
+
+    return `Olá ${firstName}, tudo bem?`
+
+}
+
+advancedGreeting('Otávio','dos Santos');
+advancedGreeting('Otávio');
