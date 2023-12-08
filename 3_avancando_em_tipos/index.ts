@@ -76,3 +76,93 @@ function advancedGreeting(firstName: string, lastName?: string){
 
 advancedGreeting('Otávio','dos Santos');
 advancedGreeting('Otávio');
+
+// 9 - Union type:
+
+function showBalance(balance: string|number){
+    console.log(`O saldo da conta é ${balance}`)
+}
+
+showBalance(100);
+showBalance("500");
+// showBalance(True);
+
+// 10 - Avançando em union types:
+
+
+function showUserRole(role: boolean|string){
+    if(typeof role === "boolean" ){
+        return "Usuário não aprovado"
+    }
+
+    return `A função do usuario é ${role}`
+}
+
+showUserRole(false);
+showUserRole('Admin')
+
+// 11 - type alias:
+
+type ID = number|string;
+
+function showId(id: ID){
+    console.log(`o id é: ${id}`)
+}
+
+showId(1);
+showId("200")
+
+// 12 - interface:
+
+interface Point {
+    x: number,
+    y: number,
+    z: number
+}
+
+function showCoords(obj: Point){
+    console.log(obj)
+}
+
+const coordObj:Point= {
+    x: 10,
+    y: 9,
+    z: 8
+}
+
+showCoords(coordObj)
+
+// 13 - interface x type alias:
+// funcionalidades: type = const / interface = var
+
+interface Person {
+    name: string,
+}
+
+interface Person {
+    age: number,
+}
+
+const somePerson: Person = {name:"Otávio",age:18}
+
+type PersonType = {
+    name: string
+}
+
+// type PersonType = {
+//     age: number
+// }
+
+// 14 - Literal types:
+
+let test: "testando"
+
+// test = "testando2"
+
+function showDirection(direction: "left"|"center"|"right"){
+    console.log(`a direção é ${direction}`)
+}
+
+// showDirection("oi")
+
+showDirection("center")
